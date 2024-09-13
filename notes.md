@@ -43,13 +43,18 @@ Put a blank line in between paragraphs to seperate them.
 You can add a line break by putting two spaces  
 at the end of a line and then pushing enter.
 
+Otherwise it might
+not work
+the way
+you think.
+
 ### Emphasis
 
 ```
 *italics* or _italics_
 **bold** or __bold__
 Combine **bold and _italics_**
-**Does _this** work?_
+**This _doesn't** work_
 ```
 
 *italics* or _italics_
@@ -68,7 +73,7 @@ Combine **bold and _italics_**
 [Link](churchofjesuschrist.org)
 ```
 
-[Link](churchofjesuschrist.org)
+[Link](https://churchofjesuschrist.org)
 
 ###Tables
 
@@ -82,7 +87,7 @@ d | right | centered
 ```
 
 Table | Right-Aligned | Centered
---- | :-: | ----------:
+--- | --: | :-:
 a | This column| This 
 b | is aligned | column
 c | to the | is
@@ -124,10 +129,12 @@ Underscores
 
 ### Code
 
-`Inline code has \`backticks\` around it`
-`Escape backticks with \\\``
+``Inline code has `backticks` around it``
+Put backticks in code with ``double` backticks``
 
 Inline code has `backticks` around it
+
+Escape backticks with ``double backticks``
 
 ```
 \`\`\`
