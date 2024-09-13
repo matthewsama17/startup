@@ -51,16 +51,16 @@ you think.
 ### Emphasis
 
 ```
-*italics* or _italics_
-**bold** or __bold__
-Combine **bold and _italics_**
+*italics* or _italics_  
+**bold** or __bold__  
+Combine **bold and _italics_**  
 **This _doesn't** work_
 ```
 
-*italics* or _italics_
-**bold** or __bold__
-Combine **bold and _italics_**
-**Does _this** work?_
+*italics* or _italics_  
+**bold** or __bold__  
+Combine **bold and _italics_**  
+**This _doesn't** work_
 
 ```
 ~~Strikethrough~~
@@ -70,7 +70,7 @@ Combine **bold and _italics_**
 ### Links
 
 ```
-[Link](churchofjesuschrist.org)
+[Link](https://churchofjesuschrist.org)
 ```
 
 [Link](https://churchofjesuschrist.org)
@@ -98,18 +98,19 @@ d | right | centered
 >This is a block quote
 >You can write is across different lines
 
->Even if you writ a really long quote all on one line, it will still appear at the end as having wrapped onto multiple lines. Also, you can use **Markdown** ~~stuff~~ in a block quote and it works just fine.
+>Even if you write a really long quote all on one line, it will still appear at the end as having wrapped onto multiple lines. Also, you can use **Markdown** ~~stuff~~ in a block quote and it works just fine.
 ```
 
 >This is a block quote
 >You can write is across different lines
 
->Even if you writ a really long quote all on one line, it will still appear at the end as having wrapped onto multiple lines. Also, you can use **Markdown** ~~stuff~~ in a block quote and it works just fine.
+>Even if you write a really long quote all on one line, it will still appear at the end as having wrapped onto multiple lines. Also, you can use **Markdown** ~~stuff~~ in a block quote and it works just fine.
 
 ### Horizontal Rule
 
 ```
 Three or more
+
 ---
 Hyphens
 ***
@@ -120,6 +121,7 @@ Underscores
 ```
 
 Three or more
+
 ---
 Hyphens
 ***
@@ -130,16 +132,13 @@ Underscores
 ### Code
 
 ``Inline code has `backticks` around it``
-Put backticks in code with ``double` backticks``
 
-Inline code has `backticks` around it
+``Inline code has `backticks` around it`
 
-Escape backticks with ``double backticks``
+Put backticks in code with double backticks
 
 ```
-\`\`\`
 Multiline code is marked with three backticks at the beginning and end.
-\`\`\`
 ```
 
 ## github
