@@ -3,16 +3,137 @@
 ## Markdown
 
 ### Headers
-```# H1
+```
+# H1
 ## H2
 ### H3
 #### H4
 ##### H5
 ###### H6
+      ^This space is important
 ```
 #### H4
 ##### H5
 ###### H6
+
+```
+An alternate way to do H1 and H2
+H1
+==
+
+H2
+--
+```
+
+### Paragraphs
+```
+Put a blank line in between paragraphs to seperate them.
+
+You can add a line break by putting two spaces  
+at the end of a line and then pushing enter.
+
+Otherwise it might
+not work
+the way
+you think.
+```
+
+Put a blank line in between paragraphs to seperate them.
+
+You can add a line break by putting two spaces  
+at the end of a line and then pushing enter.
+
+### Emphasis
+
+```
+*italics* or _italics_
+**bold** or __bold__
+Combine **bold and _italics_**
+**Does _this** work?_
+```
+
+*italics* or _italics_
+**bold** or __bold__
+Combine **bold and _italics_**
+**Does _this** work?_
+
+```
+~~Strikethrough~~
+```
+~~Strikethrough~~
+
+### Links
+
+```
+[Link](churchofjesuschrist.org)
+```
+
+[Link](churchofjesuschrist.org)
+
+###Tables
+
+```
+Table | Right-Aligned | Centered
+--- | :-: | ----------:
+a | This column| This 
+b | is aligned | column
+c | to the | is
+d | right | centered
+```
+
+Table | Right-Aligned | Centered
+--- | :-: | ----------:
+a | This column| This 
+b | is aligned | column
+c | to the | is
+d | right | centered
+
+### Blockquote
+```
+>This is a block quote
+>You can write is across different lines
+
+>Even if you writ a really long quote all on one line, it will still appear at the end as having wrapped onto multiple lines. Also, you can use **Markdown** ~~stuff~~ in a block quote and it works just fine.
+```
+
+>This is a block quote
+>You can write is across different lines
+
+>Even if you writ a really long quote all on one line, it will still appear at the end as having wrapped onto multiple lines. Also, you can use **Markdown** ~~stuff~~ in a block quote and it works just fine.
+
+### Horizontal Rule
+
+```
+Three or more
+---
+Hyphens
+***
+Asterisks
+___
+Underscores
+
+```
+
+Three or more
+---
+Hyphens
+***
+Asterisks
+___
+Underscores
+
+### Code
+
+`Inline code has \`backticks\` around it`
+`Escape backticks with \\\``
+
+Inline code has `backticks` around it
+
+```
+\`\`\`
+Multiline code is marked with three backticks at the beginning and end.
+\`\`\`
+```
 
 ## github
 `git pull` to pull from github
