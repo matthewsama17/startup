@@ -1,4 +1,19 @@
 # CS240 NOTES
+
+## Markdown
+
+### Headers
+```# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
+#### H4
+##### H5
+###### H6
+
 ## github
 `git pull` to pull from github
 
