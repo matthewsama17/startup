@@ -23,3 +23,14 @@
 `git diff SHA SHA` to compare two commits
 
 `git diff HEAD~1 HEAD` to compare current Head to the preceding commit
+
+## EC2
+Elastic IP allows you to keep your IP address, even when you turn your server off.
+
+Elastic IPs cost money, but only when the attached server is off.
+
+My server's Elastic IP is 3.224.78.77
+
+You can get to my server by going to [here](http://3.224.78.77)
+
+I can ssh into my server using the command `ssh -i [key pair file] ubuntu@3.224.78.77`
