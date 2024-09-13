@@ -34,3 +34,10 @@ My server's Elastic IP is 3.224.78.77
 You can get to my server by going to [here](http://3.224.78.77)
 
 I can ssh into my server using the command `ssh -i [key pair file] ubuntu@3.224.78.77`
+
+## Domain Name
+After you buy a Domain Name, you attach records to it.
+
+The records determine where a person goes when they visit the domain name.
+
+My domain name is <websitethatbeatsyouattictactoe.click>
