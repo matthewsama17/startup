@@ -40,4 +40,4 @@ After you buy a Domain Name, you attach records to it.
 
 The records determine where a person goes when they visit the domain name.
 
-My domain name is <websitethatbeatsyouattictactoe.click>
+My domain name is <http://websitethatbeatsyouattictactoe.click>
