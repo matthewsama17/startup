@@ -79,7 +79,7 @@ Combine **bold and _italics_**
 
 ```
 Table | Right-Aligned | Centered
---- | :-: | ----------:
+--- | --: | :-:
 a | This column| This 
 b | is aligned | column
 c | to the | is
@@ -145,7 +145,11 @@ Underscores
 
 Inline code has `backticks` around it
 
-Put backticks in code with double backticks
+```
+Put backticks in code with ``double` backticks``
+```
+
+Put backticks in code with ``double` backticks``
 
 ```
 Multiline code is marked with three backticks at the beginning and end.
