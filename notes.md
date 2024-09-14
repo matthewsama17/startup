@@ -75,7 +75,7 @@ Combine **bold and _italics_**
 
 [Link](https://churchofjesuschrist.org)
 
-###Tables
+### Tables
 
 ```
 Table | Right-Aligned | Centered
@@ -112,10 +112,15 @@ d | right | centered
 Three or more
 
 ---
+
 Hyphens
+
 ***
+
 Asterisks
+
 ___
+
 Underscores
 
 ```
@@ -123,17 +128,22 @@ Underscores
 Three or more
 
 ---
+
 Hyphens
+
 ***
+
 Asterisks
+
 ___
+
 Underscores
 
 ### Code
 
 ``Inline code has `backticks` around it``
 
-``Inline code has `backticks` around it`
+Inline code has `backticks` around it
 
 Put backticks in code with double backticks
 
