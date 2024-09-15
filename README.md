@@ -24,13 +24,13 @@
 
 ### Technologies
 
-* *HTML* - Uses correct HTML structure to display the title, the gameboard, and the buttons. There will be three HTML pages. One for the gameboard, one for login, and one for the leaderboard. Hyperlinks are used to transition between these.
-* *CSS* - Program is styled so that it looks nice, even on varying screen sizes.
-* *JavaScript/React* - JavaScript and React will handle all of the logic necessary for the program to be able to play, and win, Tic Tac Toe. JavaScript and React also help the program to be able to accept input for login.
-* *Service* - Backend service with endpoints for:
+* **HTML** - Uses correct HTML structure to display the title, the gameboard, and the buttons. There will be three HTML pages. One for the gameboard, one for login, and one for the leaderboard. Hyperlinks are used to transition between these.
+* **CSS** - Program is styled so that it looks nice, even on varying screen sizes.
+* **JavaScript/React** - JavaScript and React will handle all of the logic necessary for the program to be able to play, and win, Tic Tac Toe. JavaScript and React also help the program to be able to accept input for login.
+* **Service** - Backend service with endpoints for:
 	* Login
 	* Recording Losses
 	* Updating Leaderboard
 	* Retrieving Leaderboard
-* *DB/Login* - Stores login information and losses for each user in a database. It uses this information to create a Leaderboard that is displayed on the website.
-* *WebSocket* - The website updates the leaderboard every time a user loses a game of Tic Tac Toe.
+* **DB/Login** - Stores login information and losses for each user in a database. It uses this information to create a Leaderboard that is displayed on the website.
+* **WebSocket** - The website updates the leaderboard every time a user loses a game of Tic Tac Toe.
