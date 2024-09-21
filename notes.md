@@ -197,3 +197,8 @@ After you buy a Domain Name, you attach records to it.
 The records determine where a person goes when they visit the domain name.
 
 My domain name is <http://websitethatbeatsyouattictactoe.click>
+
+## HTML
+Hyperlinks are put in HTML with`<a href = "**address**">text</a>`
+
+Images are put in HTML with`<img src = "**address**"></img>`
