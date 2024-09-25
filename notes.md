@@ -202,3 +202,5 @@ My domain name is <http://websitethatbeatsyouattictactoe.click>
 Hyperlinks are put in HTML with`<a href = "**address**">text</a>`
 
 Images are put in HTML with`<img src = "**address**"></img>`
+
+Deploy with `./deployFiles.sh -k <pemkey> -h <domainname> -s <servicename>`
