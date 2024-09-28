@@ -13,7 +13,7 @@
 
 ### Design
 
-![Layout for websitethatbeatsyouattictactoe.click](/websitethatbeatsyouattictactoe.jpg)
+![Layout for websitethatbeatsyouattictactoe.click](/assets/websitethatbeatsyouattictactoe.jpg)
 
 ### Key Features
 
