@@ -204,3 +204,8 @@ Hyperlinks are put in HTML with`<a href = "**address**">text</a>`
 Images are put in HTML with`<img src = "**address**"></img>`
 
 Deploy with `./deployFiles.sh -k <pemkey> -h <domainname> -s <servicename>`
+
+## CSS
+If there is an html piece`<div class="class" id="id">`
+
+It can be identified by CSS as `div` or `.class` or `#id`
