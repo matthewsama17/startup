@@ -34,3 +34,11 @@
 	* Retrieving Leaderboard
 * **DB/Login** - Stores login information and losses for each user in a database. It uses this information to create a Leaderboard that is displayed on the website.
 * **WebSocket** - The website updates the leaderboard every time a user loses a game of Tic Tac Toe.
+
+## HTML Deliverable
+
+* **HTML** - I added three HTML pages for gameplay, login, and the scoreboard. Each Page has a header with the name of the site and links to all the pages, a footer with my name and a link to my github, and some content in the middle. I used proper tags to organize the information.
+* **Links** - There are links in the header of each page going to the other pages. The login page links to the play page. The footer of each page has a link to my github.
+* **Text/Image** - There is appropriate text on the pages, and there is an image of a tic tac toe board standing in for a real tic tac toe board.
+* **Login** - There is a placeholder login page.
+* **Database/WebSocket** - The scoreboard will eventually use database and websocket technology to track and update itself.
