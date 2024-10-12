@@ -41,4 +41,5 @@
 * **Links** - There are links in the header of each page going to the other pages. The login page links to the play page. The footer of each page has a link to my github.
 * **Text/Image** - There is appropriate text on the pages, and there is an image of a tic tac toe board standing in for a real tic tac toe board.
 * **Login** - There is a placeholder login page.
+* **3rd Party Service Call** - On the scoreboard page, there is a placeholder for a 3rd party service call to display the current location of the International Space Station.
 * **Database/WebSocket** - The scoreboard will eventually use database and websocket technology to track and update itself.
