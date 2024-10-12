@@ -29,10 +29,41 @@ header {
     margin: 0;
 }
 
+#title-1 {
+    font-size: 1.9em;
+}
+
+#title-2 {
+    font-size: 1.5em;
+}
+
+#title-3 {
+    font-size: 2.3em;
+}
+
+#title-4 {
+    font-size: 1.8em;
+}
+
+#title-5 {
+    font-size: 3em;
+}
+
 .navigation-menu {
     flex: 0;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.navigation-menu div {
+    height: 1em;
+}
+
+@media (orientation: portrait) {
+    header {
+        flex-direction: column-reverse;
+    }
 }
