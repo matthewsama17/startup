@@ -1,3 +1,38 @@
 body {
-    color: red;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+}
+
+header {
+    flex: 0;
+
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    background-color: #DDD;
+    border-bottom: thin black solid;
+}
+
+.title {
+    flex: 1;
+
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title * {
+    margin: 0;
+}
+
+.navigation-menu {
+    flex: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
