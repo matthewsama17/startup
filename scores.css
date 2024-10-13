@@ -1,0 +1,5 @@
+th, td {
+    border-right: thin black solid;
+    border-bottom: thin black solid;
+    padding: .5em;
+}
