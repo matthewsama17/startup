@@ -43,3 +43,11 @@
 * **Login** - There is a placeholder login page.
 * **3rd Party Service Call** - On the scoreboard page, there is a placeholder for a 3rd party service call to display the current location of the International Space Station.
 * **Database/WebSocket** - The scoreboard will eventually use database and websocket technology to track and update itself.
+
+## CSS Deliverable
+
+* **HFM** - I used CSS to style the Header, Footer, and Main content of my application to look exactly the way I want it to look.
+* **Resizing** - My application uses to CSS to respond beautifully to window resizing. If viewed in portrait mode, the header changes to fit better in a portrait presentation.
+* **Elements** - All Navigation and Application elements have been touched up with CSS to improve their appearance.
+* **Text** - I used CSS to change the font of my application to the Sans-Serif font family. I also change the font size in various places as appropriate, but most notably in the website header.
+* **Images** - There is still an image.
