@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main p {
+    font-size: 2em;
+}
+
+button {
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: .6em;
+
+    height: 1.7em;
+    width: 5.5em;
+    font-size: 4em;
+}
