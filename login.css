@@ -1,0 +1,12 @@
+main div {
+    padding-bottom: 1em;
+}
+
+main span {
+    display: inline-block;
+    width: 5em;
+}
+
+button {
+    font-size: 1em;
+}
