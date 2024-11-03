@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Code for a website that beats you at tic tac toe",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -12,5 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   }
 }
