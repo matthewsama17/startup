@@ -1,12 +1,13 @@
-main div {
+.login-div {
     padding-bottom: 1em;
 }
 
-main span {
+.login-span {
     display: inline-block;
     width: 5em;
 }
 
-button {
+.login-button {
+    margin-right: .5em;
     font-size: 1em;
 }
