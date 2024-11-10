@@ -34,7 +34,7 @@ function Square() {
 
 function Board() {
   return (
-    <>
+    <div className="board">
       <div className="board-row">
         <Square />
         <Square />
@@ -50,6 +50,6 @@ function Board() {
         <Square />
         <Square />
       </div>
-    </>
+    </div>
   );
 }
