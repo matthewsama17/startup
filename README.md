@@ -51,3 +51,10 @@
 * **Elements** - All Navigation and Application elements have been touched up with CSS to improve their appearance.
 * **Text** - I used CSS to change the font of my application to the Sans-Serif font family. I also change the font size in various places as appropriate, but most notably in the website header.
 * **Images** - There is still an image.
+
+## React Deliverable
+
+* **Vite** - Application was bundled with Vite.
+* **Components** - There are components standing in for all functions of the app.
+* **Router** - The app uses a React Router to navigate between pages.
+* **Hooks** - The app uses Hooks to make the tic tac toe board reactive. (It isn't playable, but it is reactive.)
