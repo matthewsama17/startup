@@ -3,3 +3,7 @@ th, td {
     border-bottom: thin black solid;
     padding: .5em;
 }
+
+img {
+    padding: .5em;
+}
