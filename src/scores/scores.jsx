@@ -9,7 +9,7 @@ export function Scores() {
     fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
       .then((response) => response.json())
       .then((data) => {
-        const apiUrl = `https://picsum.photos/id/${data[0].id}/300/300`;
+        const apiUrl = `https://picsum.photos/id/${data[0].id}/250/250`;
         setImageUrl(apiUrl);
       })
       .catch();
