@@ -58,3 +58,10 @@
 * **Components** - There are components standing in for all functions of the app.
 * **Router** - The app uses a React Router to navigate between pages.
 * **Hooks** - The app uses Hooks to make the tic tac toe board reactive. (It isn't playable, but it is reactive.)
+
+## Service Deliverable
+
+* **Service** - I added an HTTP service using Node.js and Express.
+* **Backend** - My application provides a service endpoint that generates a random letter.
+* **Frontend** - My application frontend calls the backend to generate a random letter when a square is clicked. Also it uses Express.
+* **Third-Party** - My application uses a third-party service call to get a photo on the scores page.
