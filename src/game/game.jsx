@@ -19,7 +19,11 @@ function Square() {
 
   function handleClick() {
     if(value == null) {
-      setValue('X');
+      fetch('/letter')
+        .then((response) => response.json())
+        .then((response) => {
+          setValue(response["letter"]);
+        });
     }
     else {
       setValue(null);
