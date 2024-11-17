@@ -6,5 +6,6 @@ th, td {
 
 img {
     padding: .5em;
-    border: 2em;
+    border: none;
+    border-radius: .5em;
 }
