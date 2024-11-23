@@ -17,6 +17,14 @@ app.get('/winner/:data', (_req, res) => {
   res.send({ winner: calculateWinner(squares) });
 });
 
+app.get('/move/:data', (_req, res) => {
+  const squares = decodeSquares(_req.params.data);
+  newSquares = makeMove(squares);
+  const squareString = encodeSquares(squares);
+
+  res.send({ data: squareString });
+});
+
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
@@ -40,6 +48,21 @@ function calculateWinner(squares) {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+function makeMove(squares) {
+  let emptySpots = [];
+  for(let i = 0; i < 9; i++) {
+    if(squares[i] === null) {
+      emptySpots.push(i);
+    }
+  }
+
+  if(emptySpots.length !== 0) {
+    const index = Math.floor(Math.random() * emptySpots.length);
+    squares[emptySpots[index]] = "X";
+  }
+  return squares
+}
 
 function encodeSquares(squares) {
   let result = "";
