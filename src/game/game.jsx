@@ -40,7 +40,7 @@ function Board() {
   function handleClick(i) {
     const newSquares = squares.slice();
 
-    if(squares[i] == null) {
+    if(squares[i] == null && winnerString == null) {
       if(xNext) {
         newSquares[i] = "X";
         setXNext(false);
