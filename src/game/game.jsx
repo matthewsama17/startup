@@ -27,30 +27,51 @@ function ResetButton({ onButtonClick }) {
 
 function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [winnerString, setWinnerString] = useState(null);
 
   function handleClick(i) {
     const newSquares = squares.slice();
 
     if(squares[i] == null) {
-      fetch('/letter')
-        .then((response) => response.json())
-        .then((response) => {
-          newSquares[i] = response["letter"];
-          setSquares(newSquares);
-        });
+      newSquares[i] = "X";
+      setSquares(newSquares);
     }
     else {
       newSquares[i] = null;
       setSquares(newSquares);
     }
+
+    let squareString = "";
+    for(let i = 0; i < 9; i++) {
+      if(newSquares[i] === null) {
+        squareString += "N";
+      }
+      else {
+        squareString += newSquares[i];
+      }
+    }
+
+    fetch('/winner/'+squareString)
+      .then((response) => response.json())
+      .then((response) => {
+        const winner = response["winner"];
+        if(winner === null) {
+          setWinnerString(null);
+        }
+        else {
+          setWinnerString(winner+" wins!");
+        }
+      });
   }
 
   function onReset() {
-    setSquares(Array(9).fill(null));
+      setSquares(Array(9).fill(null));
+      setWinnerString(null);
   }
 
   return (
     <>
+      <p className="game-p">{winnerString}</p>
       <div className="board">
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
