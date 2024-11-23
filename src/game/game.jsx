@@ -38,6 +38,11 @@ function Board() {
 
 
   function handleClick(i) {
+    let newSquares = userMove(i);
+    checkWinner(newSquares);
+  }
+
+  function userMove(i) {
     const newSquares = squares.slice();
 
     if(squares[i] == null && winnerString == null) {
@@ -52,6 +57,10 @@ function Board() {
       setSquares(newSquares);
     }
 
+    return newSquares;
+  }
+
+  function checkWinner(newSquares) {
     let squareString = encodeSquares(newSquares);
 
     fetch('/winner/'+squareString)
