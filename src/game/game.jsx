@@ -26,7 +26,7 @@ function ResetButton({ onButtonClick }) {
 }
 
 function Board() {
-  const [squares, setSquares] = useState([Array(9).fill(null)]);
+  const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
     const newSquares = squares.slice();
@@ -46,7 +46,7 @@ function Board() {
   }
 
   function onReset() {
-    setSquares([Array(9).fill(null)]);
+    setSquares(Array(9).fill(null));
   }
 
   return (
