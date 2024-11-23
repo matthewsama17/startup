@@ -62,6 +62,6 @@
 ## Service Deliverable
 
 * **Service** - I added an HTTP service using Node.js and Express.
-* **Backend** - My application provides a service endpoint that generates a random letter.
-* **Frontend** - My application frontend calls the backend to generate a random letter when a square is clicked. Also it uses Express.
+* **Backend** - My application provides a service endpoint that determines whether there is a winner.
+* **Frontend** - My application frontend calls the backend to determine whether there is a winner. Also it uses Express.
 * **Third-Party** - My application uses a third-party service call to get a photo on the scores page.
