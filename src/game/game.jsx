@@ -12,8 +12,14 @@ export function Game() {
 }
 
 function Square({ value, onSquareClick }) {
+  let color = "#ff0";
+  if (value === "X") {
+    color = "#f0f";
+  }
+  const colorStyle = { color: color };
+
   return (
-    <button className="square" onClick={onSquareClick}>{value}</button>
+    <button className="square" onClick={onSquareClick} style={colorStyle}>{value}</button>
   );
 }
 
@@ -28,16 +34,21 @@ function ResetButton({ onButtonClick }) {
 function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [winnerString, setWinnerString] = useState(null);
+  const [xNext, setXNext] = useState(true);
+
 
   function handleClick(i) {
     const newSquares = squares.slice();
 
     if(squares[i] == null) {
-      newSquares[i] = "X";
-      setSquares(newSquares);
-    }
-    else {
-      newSquares[i] = null;
+      if(xNext) {
+        newSquares[i] = "X";
+        setXNext(false);
+      }
+      else {
+        newSquares[i] = "O";
+        setXNext(true);
+      }
       setSquares(newSquares);
     }
 
@@ -59,6 +70,7 @@ function Board() {
   function onReset() {
       setSquares(Array(9).fill(null));
       setWinnerString(null);
+      setXNext(true);
   }
 
   return (
