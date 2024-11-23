@@ -12,14 +12,7 @@ app.get('/letter', (_req, res) => {
 });
 
 app.get('/winner/:data', (_req, res) => {
-  const data = _req.params.data;
-  const squares = [data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]];
-
-  for(let i = 0; i < 9; i++) {
-    if(squares[i] === "N") {
-      squares[i] = null;
-    }
-  }
+  const squares = decodeSquares(_req.params.data);
 
   res.send({ winner: calculateWinner(squares) });
 });
@@ -47,3 +40,28 @@ function calculateWinner(squares) {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+function encodeSquares(squares) {
+  let result = "";
+  for(let i = 0; i < 9; i++) {
+    if(squares[i] === null) {
+      result += "N";
+    }
+    else {
+      result += squares[i];
+    }
+  }
+  return result;
+}
+
+function decodeSquares(string) {
+  const squares = [string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7], string[8]];
+
+  for(let i = 0; i < 9; i++) {
+    if(squares[i] === "N") {
+      squares[i] = null;
+    }
+  }
+
+  return squares
+}

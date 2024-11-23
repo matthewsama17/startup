@@ -41,15 +41,7 @@ function Board() {
       setSquares(newSquares);
     }
 
-    let squareString = "";
-    for(let i = 0; i < 9; i++) {
-      if(newSquares[i] === null) {
-        squareString += "N";
-      }
-      else {
-        squareString += newSquares[i];
-      }
-    }
+    let squareString = encodeSquares(newSquares);
 
     fetch('/winner/'+squareString)
       .then((response) => response.json())
@@ -92,4 +84,29 @@ function Board() {
       <ResetButton onButtonClick={onReset} />
     </>
   );
+}
+
+function encodeSquares(squares) {
+  let result = "";
+  for(let i = 0; i < 9; i++) {
+    if(squares[i] === null) {
+      result += "N";
+    }
+    else {
+      result += squares[i];
+    }
+  }
+  return result;
+}
+
+function decodeSquares(string) {
+  const squares = [string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7], string[8]];
+
+  for(let i = 0; i < 9; i++) {
+    if(squares[i] === "N") {
+      squares[i] = null;
+    }
+  }
+
+  return squares
 }
