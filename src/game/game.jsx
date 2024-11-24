@@ -32,32 +32,36 @@ function ResetButton({ onButtonClick }) {
 }
 
 function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [squares, setSquares] = useState(Array(9).fill("X",0,1).fill(null,1));
   const [winnerString, setWinnerString] = useState(null);
-  const [xNext, setXNext] = useState(true);
 
-
-  function handleClick(i) {
-    let newSquares = userMove(i);
-    checkWinner(newSquares);
+  async function handleClick(i) {
+    let newSquares = doUserMove(i);
+    if(squares !== newSquares) {
+      newSquares = await doComputerMove(newSquares);
+    }
   }
 
-  function userMove(i) {
+  function doUserMove(i) {
     const newSquares = squares.slice();
 
     if(squares[i] == null && winnerString == null) {
-      if(xNext) {
-        newSquares[i] = "X";
-        setXNext(false);
-      }
-      else {
-        newSquares[i] = "O";
-        setXNext(true);
-      }
+      newSquares[i] = "O";
       setSquares(newSquares);
     }
 
     return newSquares;
+  }
+
+  function doComputerMove(oldSquares) {
+    const squareString = encodeSquares(oldSquares);
+
+    fetch('/move/'+squareString)
+      .then((response) => response.json())
+      .then((response) => {
+        const newSquares = decodeSquares(response['data']);
+        setSquares(newSquares);
+      });
   }
 
   function checkWinner(newSquares) {
@@ -77,10 +81,11 @@ function Board() {
   }
 
   function onReset() {
-      setSquares(Array(9).fill(null));
       setWinnerString(null);
-      setXNext(true);
+      doComputerMove(Array(9).fill(null));
   }
+
+  checkWinner(squares);
 
   return (
     <>

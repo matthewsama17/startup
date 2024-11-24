@@ -19,9 +19,12 @@ app.get('/winner/:data', (_req, res) => {
 
 app.get('/move/:data', (_req, res) => {
   const squares = decodeSquares(_req.params.data);
-  newSquares = makeMove(squares);
-  const squareString = encodeSquares(squares);
 
+  if(calculateWinner(squares) === null) {
+    makeMove(squares);
+  }
+
+  const squareString = encodeSquares(squares);
   res.send({ data: squareString });
 });
 
@@ -51,13 +54,22 @@ app.listen(port, () => {
 
 function makeMove(squares) {
   let emptySpots = [];
+  let numX = 0;
+  let numO = 0;
+
   for(let i = 0; i < 9; i++) {
     if(squares[i] === null) {
       emptySpots.push(i);
     }
+    else if(squares[i] === "X") {
+      numX += 1;
+    }
+    else if(squares[i] === "O") {
+      numO += 1;
+    }
   }
 
-  if(emptySpots.length !== 0) {
+  if((emptySpots.length !== 0) && (numX <= numO)) {
     const index = Math.floor(Math.random() * emptySpots.length);
     squares[emptySpots[index]] = "X";
   }
