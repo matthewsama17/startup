@@ -14,8 +14,15 @@ export function Game({ username, userLosses, setUserLosses }) {
     lossesString = "Losses: " + userLosses;
   }
 
-  function recordLoss() {
+  async function recordLoss() {
     setUserLosses(userLosses+1);
+    if(username !== '') {
+      const response = await fetch('/api/score', {
+        method: 'post',
+        body: JSON.stringify({username: username}),
+        headers: { 'Content-type': 'application/json; charset=UTF-8', },
+      });
+    }
   }
 
   return (

@@ -177,8 +177,6 @@ secureApiRouter.get('/scores', async (req, res) => {
 // AddLoss
 secureApiRouter.post('/score', async (req, res) => {
   await DB.addLoss(req.body.username);
-  const scores = await DB.getHighScores();
-  res.send(scores);
 });
 
 // Default error handler

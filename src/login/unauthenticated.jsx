@@ -25,7 +25,7 @@ export function Unauthenticated({ onLogin }) {
       localStorage.setItem('username', username);
       const body = await response.json();
       localStorage.setItem('losses', body.losses);
-      onLogin(username);
+      onLogin(username, body.losses);
     } else {
       const body = await response.json();
       setDisplayError(`⚠ Error: ${body.msg}`);
