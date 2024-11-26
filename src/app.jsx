@@ -53,7 +53,7 @@ export default function App() {
               }}
             />
           } />
-          <Route path='/scores' element={<Scores />} />
+          <Route path='/scores' element={<Scores username={username} />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 

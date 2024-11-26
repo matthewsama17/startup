@@ -4,6 +4,14 @@ th, td {
     padding: .5em;
 }
 
+.scores-button {
+    border: none;
+    border-radius: .6em;
+
+    height: 1.7em;
+    width: 5.5em;
+}
+
 img {
     padding: .5em;
 }
