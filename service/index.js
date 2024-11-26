@@ -105,7 +105,6 @@ function decodeSquares(string) {
   return squares
 }
 
-
 //Database Section
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
@@ -163,6 +162,7 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
+
 // GetScores
 secureApiRouter.get('/scores', async (req, res) => {
   const scores = await DB.getHighScores();
@@ -198,4 +198,3 @@ function setAuthCookie(res, authToken) {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
