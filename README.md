@@ -65,3 +65,8 @@
 * **Backend** - My application provides service endpoints that make moves and determine whether there is a winner.
 * **Frontend** - My application frontend calls the backend to make moves and determine whether there is a winner. Also it uses Express.
 * **Third-Party** - My application uses a third-party service call to get a photo on the scores page.
+
+## Login Deliverable
+
+* **Users** - I added the ability to register new users, log in to existing users, and log out. Visitors are restricted from accessing the scoreboard unless they are logged in.
+* **MongoDB** - I use MongoDB to store User Data, including their username, password hash, authToken data, and the number of times they have lost at TicTacToe.
