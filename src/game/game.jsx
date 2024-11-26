@@ -64,6 +64,7 @@ function Board({ recordLoss }) {
     if(squares !== newSquares) {
       newSquares = await doComputerMove(newSquares);
     }
+    checkWinner(newSquares);
   }
 
   function doUserMove(i) {
@@ -77,15 +78,15 @@ function Board({ recordLoss }) {
     return newSquares;
   }
 
-  function doComputerMove(oldSquares) {
+  async function doComputerMove(oldSquares) {
     const squareString = encodeSquares(oldSquares);
+    const response = await fetch('/move/'+squareString);
 
-    fetch('/move/'+squareString)
-      .then((response) => response.json())
-      .then((response) => {
-        const newSquares = decodeSquares(response['data']);
-        setSquares(newSquares);
-      });
+    const body = await response.json();
+    const newSquares = decodeSquares(body.data);
+
+    setSquares(newSquares);
+    return newSquares;
   }
 
   function checkWinner(newSquares) {
@@ -113,8 +114,6 @@ function Board({ recordLoss }) {
       doComputerMove(Array(9).fill(null));
       setLossRecorded(false);
   }
-
-  checkWinner(squares);
 
   return (
     <>
