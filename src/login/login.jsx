@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.css';
 
-export function Login() {
+export function Login({ username, authorized, onAuthChange }) {
   return (
     <main>
       <form method="get" action="index.html">

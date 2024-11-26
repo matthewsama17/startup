@@ -2,11 +2,27 @@ import React from 'react';
 import { useState } from 'react';
 import './game.css';
 
-export function Game() {
+export function Game({ username, userLosses, setUserLosses }) {
+  let usernameString = '';
+  let lossesString = "Log in to record your losses!";
+  if(userLosses === 0) {
+    lossesString = '';
+  }
+
+  if(username !== '') {
+    usernameString = "Player: " + username;
+    lossesString = "Losses: " + userLosses;
+  }
+
+  function recordLoss() {
+    setUserLosses(userLosses+1);
+  }
+
   return (
     <main className="game-main">
-      <p className="game-p">Player: <span id="player-name">Mystery Player</span></p>
-      <Board />
+      <p className="game-p">{usernameString}</p>
+      <p className="game-p">{lossesString}</p>
+      <Board recordLoss={recordLoss} />
     </main>
   );
 }
@@ -31,9 +47,10 @@ function ResetButton({ onButtonClick }) {
   )
 }
 
-function Board() {
+function Board({ recordLoss }) {
   const [squares, setSquares] = useState(Array(9).fill("X",0,1).fill(null,1));
   const [winnerString, setWinnerString] = useState(null);
+  const [lossRecorded, setLossRecorded] = useState(false);
 
   async function handleClick(i) {
     let newSquares = doUserMove(i);
@@ -76,6 +93,10 @@ function Board() {
         }
         else {
           setWinnerString(winner+" wins!");
+          if(winner === 'X' && lossRecorded === false) {
+            setLossRecorded(true);
+            recordLoss();
+          }
         }
       });
   }
@@ -83,6 +104,7 @@ function Board() {
   function onReset() {
       setWinnerString(null);
       doComputerMove(Array(9).fill(null));
+      setLossRecorded(false);
   }
 
   checkWinner(squares);
