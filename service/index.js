@@ -125,6 +125,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 
     res.send({
       id: user._id,
+      losses: user.losses,
     });
   }
 });
@@ -132,10 +133,14 @@ apiRouter.post('/auth/create', async (req, res) => {
 // GetAuth token for the provided credentials
 apiRouter.post('/auth/login', async (req, res) => {
   const user = await DB.getUser(req.body.username);
+
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
       setAuthCookie(res, user.token);
-      res.send({ id: user._id });
+      res.send({
+        id: user._id,
+        losses: user.losses,
+      });
       return;
     }
   }

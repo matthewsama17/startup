@@ -7,8 +7,8 @@ import { Login } from './login/login';
 import { Scores } from './scores/scores';
 
 export default function App() {
-  const [username, setUsername] = React.useState(''); //React.useState(localStorage.getItem('username') || '');
-  const [userLosses, setUserLosses] = React.useState(0); //React.useState(localStorage.getItem('losses') || 0);
+  const [username, setUsername] = React.useState(localStorage.getItem('username') || '');
+  const [userLosses, setUserLosses] = React.useState(localStorage.getItem('losses') || 0);
   const currentlyAuthorized = username ? true : false;
   const [authorized, setAuthorized] = React.useState(currentlyAuthorized);
 

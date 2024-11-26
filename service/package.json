@@ -11,9 +11,12 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "better": "^0.1.0",
     "cookie-parser": "^1.4.7",
     "express": "^4.21.1",
+    "it": "^1.1.1",
     "mongodb": "^6.11.0",
+    "tho": "^1.0.0",
     "uuid": "^11.0.3"
   }
 }
