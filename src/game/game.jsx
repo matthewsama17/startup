@@ -58,6 +58,19 @@ function Board({ recordLoss }) {
   const [squares, setSquares] = useState(Array(9).fill("X",0,1).fill(null,1));
   const [winnerString, setWinnerString] = useState(null);
   const [lossRecorded, setLossRecorded] = useState(false);
+  const [rotation, setRotation] = useState(0);
+
+  let positions = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  if(rotation === 1) {
+    positions = [6, 3, 0, 7, 4, 1, 8, 5, 2];
+  }
+  else if(rotation === 2) {
+    positions = [8, 7, 6, 5, 4, 3, 2, 1, 0];
+  }
+  else if(rotation === 3) {
+    positions = [2, 5, 8, 1, 4, 7, 0, 3, 6];
+  }
+
 
   async function handleClick(i) {
     let newSquares = doUserMove(i);
@@ -111,6 +124,7 @@ function Board({ recordLoss }) {
 
   function onReset() {
       setWinnerString(null);
+      setRotation(Math.floor(Math.random() * 4));
       doComputerMove(Array(9).fill(null));
       setLossRecorded(false);
   }
@@ -120,19 +134,19 @@ function Board({ recordLoss }) {
       <p className="game-p">{winnerString}</p>
       <div className="board">
         <div className="board-row">
-          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+          <Square value={squares[positions[0]]} onSquareClick={() => handleClick(positions[0])} />
+          <Square value={squares[positions[1]]} onSquareClick={() => handleClick(positions[1])} />
+          <Square value={squares[positions[2]]} onSquareClick={() => handleClick(positions[2])} />
         </div>
         <div className="board-row">
-          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+          <Square value={squares[positions[3]]} onSquareClick={() => handleClick(positions[3])} />
+          <Square value={squares[positions[4]]} onSquareClick={() => handleClick(positions[4])} />
+          <Square value={squares[positions[5]]} onSquareClick={() => handleClick(positions[5])} />
         </div>
         <div className="board-row">
-          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+          <Square value={squares[positions[6]]} onSquareClick={() => handleClick(positions[6])} />
+          <Square value={squares[positions[7]]} onSquareClick={() => handleClick(positions[7])} />
+          <Square value={squares[positions[8]]} onSquareClick={() => handleClick(positions[8])} />
         </div>
       </div>
       <ResetButton onButtonClick={onReset} />
