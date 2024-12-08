@@ -4,11 +4,33 @@ import { ButtonEvent, ButtonNotifier } from './buttonNotifier';
 import './scores.css';
 
 export function Scores({ username }) {
+  const [scores, setScores] = React.useState([]);
+
   const [guestUsername, setGuestUsername] = React.useState('');
   const [guestColor, setGuestColor] = React.useState('#000');
   const colorStyle = { 'background-color': guestColor };
 
   const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
+
+  React.useEffect(() => {
+    fetch('/api/scores')
+      .then((response) => response.json())
+      .then((scores) => {
+        setScores(scores);
+      });
+  }, []);
+
+  const scoreRows = [];
+  for (const [i, score] of scores.entries()) {
+    scoreRows.push(
+      <tr key={i+1}>
+        <td>{i+1}</td>
+        <td>{score.username}</td>
+        <td>{score.losses}</td>
+      </tr>
+    );
+  }
+
 
   React.useEffect(() => {
     ButtonNotifier.addHandler(handleButtonEvent);
@@ -57,23 +79,7 @@ export function Scores({ username }) {
             <th>Losses</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Charlie Chaplin</td>
-            <td>1201</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Charlie Brown</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Charlie Bucket</td>
-            <td>2</td>
-          </tr>
-        </tbody>
+        <tbody>{scoreRows}</tbody>
       </table>
       <div>
         <button className="scores-button" style={colorStyle} onClick={handleClick}>{guestUsername}</button>
