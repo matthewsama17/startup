@@ -70,3 +70,8 @@
 
 * **Users** - I added the ability to register new users, log in to existing users, and log out. Visitors are restricted from accessing the scoreboard unless they are logged in.
 * **MongoDB** - I use MongoDB to store User Data, including their username, password hash, authToken data, and the number of times they have lost at TicTacToe.
+
+## Websocket Deliverable
+
+* **WebSocket** - There is a button on the scores page. When clicked, it changes everyone's version of that button to display the username of the person who clicked it. It does this using WebSocket.
+* **Functionality** - The website is fully functional. Depending on when you grade this, it may not be *good* at tic tac toe, but you can play tic tac toe against, and every time you lose, the loss will be recorded and displayed on the scores page.
