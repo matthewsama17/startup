@@ -8,6 +8,8 @@
 .game-p {
     font-size: 2em;
     height: 1em;
+    margin-top: .2em;
+    margin-bottom: .2em;
 }
 
 .game-button {
@@ -28,14 +30,20 @@
   font-size: 7em;
   font-weight: bold;
   line-height: 34px;
-  height: 1.2em;
+  height: 1em;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 1.1em;
+  width: 1em;
 }
 
 .board {
   padding: 2em;
+}
+
+@media (orientation: portrait) {
+  .square {
+    font-size: 5em;
+  }
 }
