@@ -4,7 +4,7 @@ import './scores.css';
 
 export function Scores({ username }) {
   const [guestUsername, setGuestUsername] = React.useState('');
-  const [guestColor, setGuestColor] = React.useState('#f00');
+  const [guestColor, setGuestColor] = React.useState('#000');
   const colorStyle = { 'background-color': guestColor };
 
   const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
