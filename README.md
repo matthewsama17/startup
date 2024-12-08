@@ -74,4 +74,4 @@
 ## Websocket Deliverable
 
 * **WebSocket** - There is a button on the scores page. When clicked, it changes everyone's version of that button to display the username of the person who clicked it. It does this using WebSocket.
-* **Functionality** - The website is fully functional. Depending on when you grade this, it may not be *good* at tic tac toe, but you can play tic tac toe against, and every time you lose, the loss will be recorded and displayed on the scores page.
+* **Functionality** - The website is fully functional. Depending on when you grade this, it may not be *good* at tic tac toe, but you can play tic tac toe against my application, and every time you lose, the loss will be recorded and displayed on the scores page. Therefore, the website is fully functional.
