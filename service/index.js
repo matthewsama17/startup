@@ -98,6 +98,57 @@ function decideMove(squares) {
     return index;
   }
 
+  if(numX === 0) {
+    index = Math.floor(Math.random() * 5);
+    if(index !== 4) {
+      index = 0;
+    }
+
+    return index;
+  }
+  else if(numX === 1) {
+    if(squares[0] === "X") {
+      if(squares[1] === "O") {
+        return 6;
+      }
+      if(squares[2] === "O") {
+        return 3;
+      }
+      if(squares[3] === "O") {
+        return 1;
+      }
+      if(squares[4] === "O") {
+        return 8;
+      }
+      if(squares[5] === "O") {
+        return 6;
+      }
+      if(squares[6] === "O") {
+        return 8;
+      }
+      if(squares[7] === "O") {
+        return 6;
+      }
+      if(squares[8] === "O") {
+        return 2;
+      }
+    }
+  }
+  else if(numX === 2) {
+    if(squares[0] === "X" && squares[6] === "X" && squares[1] === "O") {
+      return 8;
+    }
+    if(squares[0] === "X" && squares[1] === "X") {
+      return 4;
+    }
+    if(squares[0] === "X" && squares[6] === "X" && squares[7] === "O") {
+      return 2;
+    }
+    if(squares[0] === "X" && squares[2] === "X") {
+      return 6;
+    }
+  }
+
   return randomMove(emptySpots);
 }
 
