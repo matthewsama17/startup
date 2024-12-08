@@ -58,6 +58,15 @@ function calculateWinner(squares) {
 }
 
 function makeMove(squares) {
+  const index = decideMove(squares);
+  if(index !== 10) {
+    squares[index] = "X";
+  }
+
+  return squares;
+}
+
+function decideMove(squares) {
   let emptySpots = [];
   let numX = 0;
   let numO = 0;
@@ -74,11 +83,38 @@ function makeMove(squares) {
     }
   }
 
-  if((emptySpots.length !== 0) && (numX <= numO)) {
-    const index = Math.floor(Math.random() * emptySpots.length);
-    squares[emptySpots[index]] = "X";
+  if((emptySpots.length === 0) || (numX > numO)) {
+    return 10;
   }
-  return squares
+
+  let index = 10;
+  index = checkWinningMove(squares, emptySpots, "X");
+  if(index !== 10) {
+    return index;
+  }
+
+  index = checkWinningMove(squares, emptySpots, "O");
+  if(index !== 10) {
+    return index;
+  }
+
+  return randomMove(emptySpots);
+}
+
+function checkWinningMove(squares, emptySpots, team) {
+  for(let i = 0; i < emptySpots.length; i++) {
+    squaresCopy = [...squares];
+    squaresCopy[emptySpots[i]] = team;
+    if(calculateWinner(squaresCopy) === team) {
+      return emptySpots[i];
+    }
+  }
+  return 10;
+}
+
+function randomMove(emptySpots) {
+  const index =  Math.floor(Math.random() * emptySpots.length);
+  return emptySpots[index];
 }
 
 function encodeSquares(squares) {
