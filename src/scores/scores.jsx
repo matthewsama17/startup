@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { ButtonEvent, ButtonNotifier } from './buttonNotifier';
 import './scores.css';
 
 export function Scores({ username }) {
@@ -9,9 +10,24 @@ export function Scores({ username }) {
 
   const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
 
+  React.useEffect(() => {
+    ButtonNotifier.addHandler(handleButtonEvent);
+
+    return () => {
+      ButtonNotifier.removeHandler(handleButtonEvent);
+    };
+  });
+
+  function handleButtonEvent(event) {
+    setGuestUsername(event.username);
+    setGuestColor(event.color);
+  }
+
   function handleClick() {
+    const color = randomColor();
     setGuestUsername(username);
-    setGuestColor(randomColor());
+    setGuestColor(color);
+    ButtonNotifier.broadcastEvent(username, color);
   }
 
   function randomColor() {
