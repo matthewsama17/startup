@@ -99,7 +99,7 @@ function decideMove(squares) {
   }
 
   if(numX === 0) {
-    index = Math.floor(Math.random() * 5);
+    index = Math.floor(Math.random() * 3) + 4;
     if(index !== 4) {
       index = 0;
     }
@@ -127,10 +127,36 @@ function decideMove(squares) {
         return 8;
       }
       if(squares[7] === "O") {
-        return 6;
+        return 4;
       }
       if(squares[8] === "O") {
         return 2;
+      }
+    }
+    else if(squares[4] === "X") {
+      if(squares[0] === "O") {
+        return 8;
+      }
+      if(squares[1] === "O") {
+        return 8;
+      }
+      if(squares[2] === "O") {
+        return 6;
+      }
+      if(squares[3] === "O") {
+        return 8;
+      }
+      if(squares[5] === "O") {
+        return 0;
+      }
+      if(squares[6] === "O") {
+        return 2;
+      }
+      if(squares[7] === "O") {
+        return 0;
+      }
+      if(squares[8] === "O") {
+        return 0;
       }
     }
   }
@@ -141,11 +167,42 @@ function decideMove(squares) {
     if(squares[0] === "X" && squares[1] === "X") {
       return 4;
     }
-    if(squares[0] === "X" && squares[6] === "X" && squares[7] === "O") {
-      return 2;
-    }
     if(squares[0] === "X" && squares[2] === "X") {
       return 6;
+    }
+    if(squares[4] === "X") {
+      if(squares[0] === "X" && squares[8] == "O") {
+        if(squares[1] === "O") {
+          return 6;
+        }
+        if(squares[3] === "O") {
+          return 2;
+        }
+      }
+      if(squares[8] === "X" && squares[0] == "O") {
+        if(squares[5] === "O") {
+          return 6;
+        }
+        if(squares[7] === "O") {
+          return 2;
+        }
+      }
+      if(squares[6] === "X" && squares[2] == "O") {
+        if(squares[3] === "O") {
+          return 7;
+        }
+        if(squares[7] === "O") {
+          return 3;
+        }
+      }
+      if(squares[2] === "X" && squares[6] == "O") {
+        if(squares[1] === "O") {
+          return 5;
+        }
+        if(squares[5] === "O") {
+          return 1;
+        }
+      }
     }
   }
 
