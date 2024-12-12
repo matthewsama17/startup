@@ -209,3 +209,8 @@ Deploy with `./deployFiles.sh -k <pemkey> -h <domainname> -s <servicename>`
 If there is an html piece`<div class="class" id="id">`
 
 It can be identified by CSS as `div` or `.class` or `#id`
+
+## Ports
+Default port for HTTP is 80
+Default port for HTTPS is 443
+Default port for SSH is 22
